@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "46e766e3-e47e-49cf-b4db-c6b1bac91c10",
+    "name": "EXAMENFINALBACKEND",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43574358"
+  },
+  "item": [
+    {
+      "name": "Listar Libros",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/libros",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "libros"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Socios",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/socios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "socios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Socio Inexistente",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/socios/SOC999",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "socios",
+            "SOC999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Libro inexistente",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/libros/BIB-998",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "libros",
+            "BIB-998"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Envio Notificacion",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"destino\": \"prueba@gmail.com\",\r\n    \"mensaje\": \"Prueba de notificación\",\r\n    \"canal\": \"EMAIL\",\r\n    \"estado\": \"ENVIADA\",\r\n    \"fechaEnvio\": \"2026-07-24T21:30:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/v1/notificaciones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "v1",
+            "notificaciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prestar Libro",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"codigoEjemplar\":\"BIB-0001\",\r\n    \"codigoSocio\":\"SOC001\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/v1/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "v1",
+            "prestamos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Socio Inactivo",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"codigoEjemplar\":\"BIB-0002\",\r\n    \"codigoSocio\":\"SOC002\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/v1/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "v1",
+            "prestamos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Prestamos",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/v1/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "v1",
+            "prestamos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Devolver",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/v1/prestamos/1/devolver",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "v1",
+            "prestamos",
+            "1",
+            "devolver"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
